@@ -1,0 +1,81 @@
+#include<cstdio>
+
+int Sum(int n){
+	int sum=0;
+	for(int i =1;i<=n;i++){
+		sum+=i;
+	}
+	return sum;
+}
+
+int Power(int n){
+	return n*n;
+}
+int ShowSum(int a, int b){
+	
+	int sum=0;
+	
+	if (a>b){
+		for(int i=b;i<=a;i++){
+			sum += i;
+			printf("%d ",i);
+		}
+	}
+	else{
+		for(int i=a;i<=b;i++){
+			sum += i;
+			printf("%d ",i);
+		}
+	}
+	return sum;
+}
+int DigitNumber(int n){
+	int cnt=0;
+	while(n>0){
+		
+		cnt++;
+		n/=10;
+	}
+	return cnt;
+}
+int Divisor(int n){
+	int sum=0;
+	
+	for(int i=1;i<=n;i++){
+		if (n%i==0){
+			sum+= i;
+			printf("%d ",i);
+		}
+	}
+	return sum;
+}
+int ReverseNum(int n){
+	int cnt=0,temp=0;
+	
+	while(n>0){
+		temp = temp * 10 + n % 10;
+		n/=10;
+	}
+	return temp;
+}
+int AbsoluteValue(int n){
+	if (n>0){
+		return n;
+	}
+	else{
+		return n*-1;
+	}
+}
+
+int main(){
+	int n,a,b;
+	scanf("%d",&n);
+	scanf("%d %d",&a,&b);
+	printf("%d",Sum(n));
+	printf("%d",Power(n));
+	printf("%d",ShowSum(a,b));
+	printf("%d",DigitNumber(n));
+	printf("%d",Divisor(n));
+ 	printf("%d",ReverseNum(n));
+	printf("%d",AbsoluteValue(n));
+}
